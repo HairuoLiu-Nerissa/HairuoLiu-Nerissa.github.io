@@ -1,21 +1,17 @@
 
-
-<! This little bit of code started with https://www.wikihow.com/Create-a-Questionnaire-in-HTML and got modified, by then using info from w3schools.com to continue.
-
-This is an UGLY survey....  PLEASE MODIFY IT!
-
-Caroline Barrière
-May 2020
-
->
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
 	<! IMPORTANT to use a CSS file - external >
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
-    <title>Questionnaire</title>
+    <style>
+		/* Add this style rule directly in the HTML if needed */
+		.question {
+		  font-size: 20pt;
+		}
+	  </style>
+	<title>Questionnaire</title>
   </head>
   
   <body>
@@ -24,55 +20,104 @@ May 2020
 	<br>
 	<br>
 	<! Choose a website to evaluate >
-	<h3><i>This is a terribly ugly page... please modify it!</i></h3>
-	<h2>What do you think of the UI in this <a href="http://Provigo.ca">Provigo</a> site?</h2>	
+	<h3><i></i></h3>
+	<h3>What do you think of the UI in this <a href="https://www.uottawa.ca/en">UOttawa</a> site?</h2>	
 	<br>
 	<br>
 	<! You should make your image clickable>
-	<img src="images/Provigo-FrontPage.JPG" alt="http://Provigo.ca" width="450" height="300">
+	<a href="https://www.uottawa.ca/en">
+	<img src="images/UOttawa_image1.jpg" alt="https://www.uottawa.ca/en" width="1200" height="650">
+	</a>
 	<br>
 	<br>
-	<div class="question">
+	<div class="personalInfo">
 	<h2> Personal Information </h2>
-	<p>First name: <input type="text" name="firstname"></p>
-	<p>Last name: <input type="text" name="lastname"></p>
+	<p id="firstName">First name: <input type="text" name="firstname"></p>
+	<p id="lastName">Last name: <input type="text" name="lastname"></p>
+	<p id="roleQuestion"><h2>What is your role?</h2>
+		<select id="options">
+			<option value="Current Student" selected="selected">Current Student</option>
+			<option value="Future Student">Future Student</option>
+			<option value="Staff">Staff</option>
+		</select>
+	</p>
 	<br>
 	<br>
 		
 	</div>	
-		
-	<div class="question">
-		<h2> What you like </h2>
-		I like:<br>
-		<input type="checkbox" name="Color" value="Red">Red<br>
-		<input type="checkbox" name="Color" value="Green">Green<br>
-		<input type="checkbox" name="Color" value="Blue">Blue<br>
+	
+	
+	<div class="question1">
+		<h2>1. How would you rate the user-friendliness of the website's navigation?  </h2>
+		<input type="checkbox" name="rate" value="Excellent">Excellent<br>
+		<input type="checkbox" name="rate" value="Very Good">Very Good<br>
+		<input type="checkbox" name="rate" value="Good">Good<br>
+		<input type="checkbox" name="rate" value="Fair">Fair<br>
+		<input type="checkbox" name="Color" value="Poor">Poor<br>
 		
 		<br>
-		
-		What is your favorite fruit?<br>
-		<select id="favorite">
-			<option value="Apples" selected="selected">Apples</option>
-			<option value="Oranges">Oranges</option>
-			<option value="Bananas">Bananas</option>
+
+	
+	<h2>2. Which aspect of the website's design did you find most appealing?</h2>
+	<select id="options">
+			<option value="visual" selected="selected">Visual appeal</option>
+			<option value="charity">Charity of Information</option>
+			<option value="Responsiveness">Responsiveness(works well on different devices)</option>
+			<option value="ease"> Ease of finding relevant information</option>
+	
 		</select>
 	</div>
 	
-	<br>
-	<br>
+	<div class="question2">
+		<h2> 3. Please select the features or sections you found helpful/useful on the website: </h2>
+		<input type="checkbox" name="choose" value="Course">Course Information<br>
+		<input type="checkbox" name="choose" value="Admissions">Admissions<br>
+		<input type="checkbox" name="choose" value="Student">Student resources<br>
+		<input type="checkbox" name="choose" value="Staff">Faculty and staff directory<br>
+		<input type="checkbox" name="choose" value="Events">Events and News<br>
+		<input type="checkbox" name="choose" value="Other">Other<br>
 		
-	Comments:<br>
+		<br>
+	
+	
+	
+	<h2>4. How satisfied are you with the website's load speed and performance?</h2>
+
+
+								<p>
+									<input type="radio" name="appealing" value="Yes">Very Satisfied<br>
+									<input type="radio" name="appealing" value="No">Satisfied<br>
+									<input type="radio" name="appealing" value="Unsure">Neutral<br>
+									<input type="radio" name="appealing" value="No">Dissatisfied<br>
+									<input type="radio" name="appealing" value="Unsure">Very Dissatisfied<br>
+								</p>
+	
+	<br>
+	<br>
+	</div>
+	
+	<div class="question3">
+	<h2>5. If there are any specific issues or improvements you'd like to suggest for the University of Ottawa website, please describe them here:</h2><br>
 	<textarea rows="5" cols="30"></textarea>
 			
 	<br>
 	<br>
+	
+	<h2>6. Please share your overall impression of the University of Ottawa website. Provide any comments or feedback you may have:</h2><br>
+	<textarea rows="5" cols="30"></textarea>
 			
+	<br>
+	<br>
+	
 	<button id="submitButton" type="button" class="block">
 		SUBMIT your questionnaire
 	</button>
 		
-	<p id="signature">Site created by Caroline Barrière</p>	
+	<p id="signature">Site created by Joey Lee, Hairuo Liu</p>	
+
+     </div>
 	
 	</form>
   </body>
 </html> 
+
