@@ -1,123 +1,87 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-	<! This website was started with https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module1-Survey >
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+  <! This website was started with https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery >
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
-    <style>
-		/* Add this style rule directly in the HTML if needed */
-		.question {
-		  font-size: 20pt;
-		}
-	  </style>
-	<title>Questionnaire</title>
-  </head>
-  
-  <body>
-	<h1>Survey</h1>
-	<form id="myform" action="index.php" >
-	<br>
-	<br>
-	<! Choose a website to evaluate >
-	<h3><i></i></h3>
-	<h3>What do you think of the UI in this <a href="https://www.uottawa.ca/en">UOttawa</a> site?</h2>	
-	<br>
-	<br>
-	<! You should make your image clickable>
-	<a href="https://www.uottawa.ca/en">
-	<img src="images/UOttawa_image1.jpg" alt="https://www.uottawa.ca/en" width="1200" height="650">
-	</a>
-	<br>
-	<br>
-	<div class="personalInfo">
-	<h2> Personal Information </h2>
-	<p id="firstName">First name: <input type="text" name="firstname"></p>
-	<p id="lastName">Last name: <input type="text" name="lastname"></p>
-	<p id="roleQuestion"><h2>What is your role?</h2>
-		<select id="options">
-			<option value="Current Student" selected="selected">Current Student</option>
-			<option value="Future Student">Future Student</option>
-			<option value="Staff">Staff</option>
-		</select>
-	</p>
-	<br>
-	<br>
-		
-	</div>	
-	
-	
-	<div class="question1">
-		<h2>1. How would you rate the user-friendliness of the website's navigation?  </h2>
-		<input type="checkbox" name="rate" value="Excellent">Excellent<br>
-		<input type="checkbox" name="rate" value="Very Good">Very Good<br>
-		<input type="checkbox" name="rate" value="Good">Good<br>
-		<input type="checkbox" name="rate" value="Fair">Fair<br>
-		<input type="checkbox" name="Color" value="Poor">Poor<br>
-		
-		<br>
+  <title>uOttawa Groceries Market</title> 
+</head>
 
-	
-	<h2>2. Which aspect of the website's design did you find most appealing?</h2>
-	<select id="options">
-			<option value="visual" selected="selected">Visual appeal</option>
-			<option value="charity">Charity of Information</option>
-			<option value="Responsiveness">Responsiveness(works well on different devices)</option>
-			<option value="ease"> Ease of finding relevant information</option>
-	
-		</select>
-	</div>
-	
-	<div class="question2">
-		<h2> 3. Please select the features or sections you found helpful/useful on the website: </h2>
-		<input type="checkbox" name="choose" value="Course">Course Information<br>
-		<input type="checkbox" name="choose" value="Admissions">Admissions<br>
-		<input type="checkbox" name="choose" value="Student">Student resources<br>
-		<input type="checkbox" name="choose" value="Staff">Faculty and staff directory<br>
-		<input type="checkbox" name="choose" value="Events">Events and News<br>
-		<input type="checkbox" name="choose" value="Other">Other<br>
-		
-		<br>
-	
-	
-	
-	<h2>4. How satisfied are you with the website's load speed and performance?</h2>
+<body onload="onLoadFunction();">
+  <header>
+    <a>
+      <img src="images/uOttawa-logo.jpg" alt="uOttawa_logo" width="240" height="64">
+    </a>
+    <a href="#" class="logo"><i class="ri-ship-2-fill"></i></i><span>uOttawa Groceries Market</span></a>
+		<!-- Tab links, each one with an onclick event associated with it -->
+		<div class="tab">
+			<button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+			<button class="tablinks" onclick="openInfo(event, 'Products'); populateListProductChoices('dietSelect', 'displayProduct');">Products</button>
+			<button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+		</div>
+
+		<div class="main">
+			<a href="#" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="#">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+  </header>
 
 
-								<p>
-									<input type="radio" name="appealing" value="Yes">Very Satisfied<br>
-									<input type="radio" name="appealing" value="No">Satisfied<br>
-									<input type="radio" name="appealing" value="Unsure">Neutral<br>
-									<input type="radio" name="appealing" value="No">Dissatisfied<br>
-									<input type="radio" name="appealing" value="Unsure">Very Dissatisfied<br>
-								</p>
-	
-	<br>
-	<br>
-	</div>
-	
-	<div class="question3">
-	<h2>5. If there are any specific issues or improvements you'd like to suggest for the University of Ottawa website, please describe them here:</h2><br>
-	<textarea rows="5" cols="30"></textarea>
-			
-	<br>
-	<br>
-	
-	<h2>6. Please share your overall impression of the University of Ottawa website. Provide any comments or feedback you may have:</h2><br>
-	<textarea rows="5" cols="30"></textarea>
-			
-	<br>
-	<br>
-	
-	<button id="submitButton" type="button" class="block">
-		SUBMIT your questionnaire
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Client Information</h3>
+  <p>Tell us a bit about you.</p>
+	Choose a Category:
+	<select id="dietSelect" name="dietSelect">
+	  <option value="None">None</option>
+	  <option value="Vegetarian">Vegetarian</option>
+    <option value="GlutenFree">GlutenFree</option>
+    
+	</select>
+  <br></br>
+  Choose your preference:
+  <select id="preferenceSelect" name="preferenceSelect">
+    <option value="None">None</option>
+    <option value="Organic">Organic</option>
+    <option value="Inorganic">Non-organic</option>
+  </select>
+  <br></br>
+  <!-- After click the button leads user to get into Products tab -->
+  <button id="filter" type="button" class="block" onclick="populateListProductChoices('dietSelect','preferenceSelect', 'displayProduct'); openInfo(event, 'Products')">
+    Show Your Results
+  </button>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your targeted products</h3>
+  <p>We preselected products based on your restrictions.</p>
+	 Choose items to buy:
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add Selected Items to Cart
 	</button>
-		
-	<p id="signature">Site created by Joey Lee, Hairuo Liu</p>	
+  <button id="addCart" type="button" class="block" onclick="selectedItems(); openInfo(event, 'Cart')">
+		View Cart
+	</button>
+</div>
 
-     </div>
-	
-	</form>
-  </body>
-</html> 
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <div id="displayCart"></div>
+</div>
+<br>
+<br>
+<div style = "position: absolute; bottom: 15px;">
+  <p id="signature">Site created by Joey Lee, Hairuo Liu and Roy Rui.</p>	
+  
 
+
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>

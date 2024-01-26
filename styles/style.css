@@ -1,143 +1,54 @@
+/* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
 
-/* Style sheet
-   color picker www.w3schools.com/colors/colors_picker.asp
-*/
-
-html {
-  background-color: #f2f2f2;
-}
- 
-body {
-  background-color: #f2f2f2;
-  padding: 5px 5px 5px 5px;
-  
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
 }
 
-h1 {
-	font-size: 60px;
-	text-align: center;
-	margin: 0;
-	padding: 20px 0;
-	color: #bccfd7;  /* Fuchsia */
-	text-shadow: 3px 3px 1px black;
-}
-
-h2 {
-  font-size: 30px;
-  color: white;
-}
-
-h3 {
-  font-size: 30px;
-  text-align: center;
-  color: black;
-}
-
-
-textarea{
-  width: 100%;
-  padding: 1%;
-  background-color: #0b121a00;
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 20px;
-  color: #fff;
-  font-size: 1em;
-}
-
-.personalInfo {
-  background-color: #2d2d2c;
-  color: white;
-  margin: 20px;
-  padding: 50px;
-}
-
-#options{
-  font-size: 20px;
-}
-
-.question1{
-  font-size: 20pt; /* Font size for questions */
-  text-align: left; /* Align questions to the left */
-  margin: 20px; /* Adjusted margin for better spacing */
-  padding: 50px;
-  background-color: #636d77;
-  color: white;
-}
-.question2{
-  font-size: 20pt; /* Font size for questions */
-  text-align: left; /* Align questions to the left */
-  margin: 20px; /* Adjusted margin for better spacing */
-  padding: 50px;
-  background-color: #67796c;
-  color: white;
-}
-.question3{
-  font-size: 20pt; /* Font size for questions */
-  text-align: left; /* Align questions to the left */
-  margin: 20px; /* Adjusted margin for better spacing */
-  padding: 50px;
-  background-color: #80746c;
-  color: white;
-}
-
-.textarea:focus{
-  border: 2px solid #76dbc1
-}
-
-select{
-  position: relative;
-  width: 250px;
-  background-color: #0b121a;
-  border: 1px solid rgba(255,255,255,0.25);
-  color: #fff;
-}
-
-
-
-img {
-  display: block;
-  margin: 0 auto;
-  align: center;
-}
-
-p {
-  color: white;
-  font-size: 30px;
-}
-
-
-
-
-table {
-	border: 1px solid black;
-	background-color: #f1f1c1;
-}
-
-/* Defining styling for a specific element type - each question */
-.question {
-  background-color: black;
-  color: white;
-  margin: 20px;
-  padding: 20px;
-}
-
-/* Defining styling for a specific element type - large block buttons */
-.block {
-  display: block;
-  width: 100%;
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
   border: none;
-  background-color: #8f001a;  
-  padding: 14px 28px;
-  font-size: 16px;
+  outline: none;
   cursor: pointer;
-  text-align: center;
-  color:white;
+  padding: 14px 16px;
+  transition: 0.3s;
 }
 
-/* Defining styling for a specific element with an id */
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* h1{
+  font-family: 'Georgia', 'Trebuchet MS', serif;
+  font-size: 60px;
+  text-align: left;
+  margin: 0;
+  padding: 20px 0;
+  color: #ffffff;  
+  text-shadow: 3px 3px 1px #751cda;
+} */
+
 #signature {
   text-align: right;
-  color: #8f001a;
+  color: #02236c;
   font-style: italic;
-  font-size: 75%;
+  font-size: 40%;
 }
